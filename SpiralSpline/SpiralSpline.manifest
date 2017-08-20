@@ -1,0 +1,10 @@
+{
+	"autodeskProduct":	"Fusion360",
+	"type":	"script",
+	"author":	"Sterling Crispin",
+	"description":	{
+		"":	"directly adapted from http://help.autodesk.com/view/fusion360/ENU/?guid=GUID-c3d4a306-fade-11e4-8e56-3417ebd3d5be"
+	},
+	"supportedOS":	"windows|mac",
+	"editEnabled":	true
+}
