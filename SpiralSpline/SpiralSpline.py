@@ -25,12 +25,21 @@ def run(context):
 
         
         # Define the points the spline with fit through.
-        for i in range(10):
-            p = (i/9) * math.pi * 2;
-            points.add(adsk.core.Point3D.create( math.cos(p), math.sin(p), i))
-
-        # Create the spline.
-        sketch.sketchCurves.sketchFittedSplines.add(points)
+        for j in range(10):
+            for i in range(10):
+                # from 0 to TWOPI radians as i increases 
+                p = (i/10-1) * math.pi * 2
+                # scaled in intensity by each tube
+                p = p * (j/10-1) 
+                # so the tubes aren't ontop of one another
+                xstep = j * 2
+                points.add(adsk.core.Point3D.create( math.cos(p) + xstep , math.sin(p) , i ))
+                
+            # Create a spline along those points
+            spline = sketch.sketchCurves.sketchFittedSplines.add(points)
+            
+             #delete any old points
+            points = adsk.core.ObjectCollection.create()
     except:
         if ui:
             ui.messageBox('Failed:\n{}'.format(traceback.format_exc()))
