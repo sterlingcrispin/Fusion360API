@@ -1,0 +1,10 @@
+{
+	"autodeskProduct":	"Fusion360",
+	"type":	"script",
+	"author":	"",
+	"description":	{
+		"":	"see https://www.instructables.com/id/Parametric-Modeling-With-Fusion-360-API/"
+	},
+	"supportedOS":	"windows|mac",
+	"editEnabled":	true
+}
