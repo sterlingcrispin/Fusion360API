@@ -1,4 +1,4 @@
-#Author-
+#Author-Sterling Crispin
 #Description-see https://www.instructables.com/id/Parametric-Modeling-With-Fusion-360-API/
 
 import adsk.core, adsk.fusion, traceback
@@ -27,9 +27,9 @@ def run(context):
         for j in range(tubeCount):
             for i in range(splineSegments):
                 # from 0 to TWOPI radians as i increases 
-                p = (i/splineSegments-1) * math.pi * 2
+                p = (i/splineSegments) * math.pi * 2
                 # scaled in intensity by each tube
-                p = p * (j/tubeCount-1) 
+                p = p * (j/tubeCount) 
                 # so the tubes aren't ontop of one another
                 xstep = j * 2
                 points.add(adsk.core.Point3D.create( math.cos(p) + xstep , math.sin(p) , i ))
@@ -39,7 +39,7 @@ def run(context):
             
             # Create a circle at the beginning of the spline
             circles = sketch.sketchCurves.sketchCircles
-            circle1 = circles.addByCenterRadius(points[0], j/(tubeCount-2) + 0.1)
+            circle1 = circles.addByCenterRadius(points[0], j/(tubeCount) + 0.1)
             
             # Create a sweep input
             # there's probably a better way of getting the profile of the Circle but I don't know it
