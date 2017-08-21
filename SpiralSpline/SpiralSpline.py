@@ -28,10 +28,10 @@ def run(context):
         for j in range(10):
             for i in range(10):
                 # from 0 to TWOPI radians as i increases 
-                p = (i/10-1) * math.pi * 2
-                # scaled in intensity by each tube
-                p = p * (j/10-1) 
-                # so the tubes aren't ontop of one another
+                p = (i/9) * math.pi * 2
+                # scaled in intensity by each spline
+                p = p * (j/9) 
+                # so the spline aren't ontop of one another
                 xstep = j * 2
                 points.add(adsk.core.Point3D.create( math.cos(p) + xstep , math.sin(p) , i ))
                 
